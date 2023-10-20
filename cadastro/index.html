@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <script>
+        var num = 0;
+        var nome;
+        var email;
+        
+        function escrever(quadro) {
+            var info = "usuário número " + (++num) + "\n";
+            info += "nome: " + nome + "\n";
+            info += "e-email: " + email + "\n\n";
+
+            if (confirm('Confirma o cadastro?')) {
+                quadro.value += info;
+            } else {
+                alert('Cadastro cancelado.');
+            }
+        }
+
+    </script> 
+         <script type="text/javascript">
+           function data(){
+            hoje = new Date();
+            dia = hoje.getDate();
+            mes = hoje.getMonth() + 1;
+            ano = hoje.getFullYear();
+            document.write('<h3>Hoje:' + dia +'/' + mes + '/' + ano + '</h3');
+      }
+          </script>
+
+    </head>
+
+    <body>
+       <div alingn = center>
+           <script>
+            data();
+            </script>
+       </div>
+        
+
+
+        <form>
+            <h2 align = "center" > Cadastro </h2>
+            <div align="center">   
+
+           <p> <input type="button" value="Digitar Nome" onclick="nome = prompt('Seu nome','')">
+            <input type="button" value="Digitar email" onclick="email = prompt('Seu e-mail','')">
+            <input type="button" value="Cadastrar" onclick="escrever(this.form.Area)">
+        </p>
+            <textarea rows="10" cols="40" name="Area"></textarea>      
+
+            </div>
+        </form>
+
+        
+    </body>
+
+</html>

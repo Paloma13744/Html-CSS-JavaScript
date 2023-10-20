@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <script>
+        var num = 0;
+        var nome;
+        var email;
+
+        function escrever(quadro) {
+            var nomeInput = document.getElementById("nomeInput");
+            var emailInput = document.getElementById("emailInput");
+
+            nome = nomeInput.value;
+            email = emailInput.value;
+
+            if (nome === "" || email === "") {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            var info = "usuário número " + (++num) + "\n";
+            info += "nome: " + nome + "\n";
+            info += "e-mail: " + email + "\n\n";
+
+            if (confirm('Confirma o cadastro?')) {
+                quadro.value += info;
+            } else {
+                alert('Cadastro cancelado.');
+            }
+
+            // Limpar campos após cadastro
+            nomeInput.value = "";
+            emailInput.value = "";
+
+
+        }
+
+        function limparFormulario() {
+            document.getElementById("nomeInput").value = "";
+            document.getElementById("emailInput").value = "";
+        }
+
+      
+
+    </script> 
+         <script type="text/javascript">
+           function data(){
+            hoje = new Date();
+            dia = hoje.getDate();
+            mes = hoje.getMonth() + 1;
+            ano = hoje.getFullYear();
+            document.write('<h3>Hoje:' + dia +'/' + mes + '/' + ano + '</h3');
+      }
+          </script>
+
+    </head>
+
+    <body>
+       <div alingn = center>
+           <script>
+            data();
+            </script>
+       </div>
+        
+
+
+        <form>
+            <h2 align = "center" > Cadastro </h2>
+            <div align="center">   
+
+        <p> 
+            <input type="text" id="nomeInput" placeholder="Digite seu nome">
+            <input type="text" id="emailInput" placeholder="Digite seu e-mail">
+            <input type="button" value="Cadastrar" onclick="escrever(this.form.Area)">
+            <input type="button" value="Limpar" onclick="limparFormulario()">
+        </p>
+            <textarea rows="10" cols="40" name="Area"></textarea>      
+
+            </div>
+        </form>
+
+        
+    </body>
+
+</html>
