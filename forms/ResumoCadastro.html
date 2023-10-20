@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="resumo">
+        <h2>Resumo do Cadastro</h2>
+        <div id="cadastroInfo">
+            <!-- As informações preenchidas no formulário serão exibidas aqui -->
+        </div>
+    </div>
+
+    <script>
+        // Recuperar informações do localStorage
+        var resumoCadastro = localStorage.getItem('resumoCadastro');
+
+        // Exibir informações no resumo
+        var cadastroInfo = document.getElementById('cadastroInfo');
+        cadastroInfo.innerHTML = resumoCadastro;
+    </script>
+</body>
+</html>
